@@ -1,0 +1,4 @@
+sudo apt update
+sudo apt install megatools
+
+#"Permet de telecharger des liens comme wget mais pour MEGA -> megatools dl 'link'

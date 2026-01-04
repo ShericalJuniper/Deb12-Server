@@ -1,0 +1,71 @@
+INSTALLATION :
+
+    Choisir la version et copier le lien de téléchargement sur https://getbukkit.org/download/spigot
+    
+    Se placer dans le dossier de server (=server)
+    
+    Télécharger le lien
+    
+    Renomer en spigot.jar
+    
+    Creer un sh pour demarrer spigot.sh
+    
+        script bash : java -server -Xms1G -Xmx2G -jar spigot.jar
+    
+    Le rendre executable
+    
+    Lancer le script
+    
+    Attendre, puis accepter les EULA (eula.txt, changer eula=false en eula=true)
+    
+    Relancer le script
+
+
+
+AJOUTER LES DROITS A UN UTILISATEUR :
+    -> ops.json
+
+    Exemple :
+    [
+      {
+        "uuid": "1f82d4fb-ac43-4711-afdf-8b32b1385d1a",
+        "name": "_EpicMad_",
+        "level": 4,
+        "bypassesPlayerLimit": false
+      },
+      {
+        "uuid": "e42073cd-48c0-420e-b7e1-19781daab765",
+        "name": "Lapinou56488",
+        "level": 4,
+        "bypassesPlayerLimit": false
+      }
+    ]
+
+
+
+PLUGINS : 
+
+    https://dev.bukkit.org/bukkit-plugins
+
+    A mettre dans /plugins
+
+
+
+AJOUTER UN PACK DE TEXTURE :
+
+    server.properties
+
+    require-resource-pack=true
+
+    resource-pack=lien_vers_telechargement_direct_du_zip_du_ressource_pack
+
+    resource-pack-sha1=xxxxxxxxx (pour avoir le sha -> shasum -a 1 nom_du_pack.zip)
+
+
+
+Propritété du monde/serveur -> server.properties
+
+
+Icon du serveur -> server-icon.png (resolution 64x64 !!!)
+
+

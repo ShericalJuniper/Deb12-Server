@@ -1,0 +1,5 @@
+sudo apt update
+sudo apt install openssh-server -y
+
+Pour se connecter :
+    ssh USER_NAME@SERVER_IP

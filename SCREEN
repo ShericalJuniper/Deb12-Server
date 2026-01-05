@@ -1,0 +1,21 @@
+Installation :
+
+    sudo apt install screen
+
+Lancer un ecran :
+
+    screen -S nom_ecran (+script à lancer)
+
+Le terminal peut desormait être fermé sans interrompre le script
+
+Pour revenir à l'ecran :
+
+    screen -r nom_ecran
+
+Pour lister les ecrans :
+
+    screen -ls
+
+Supprimer un ecran :
+
+    screen -X -S nom_ecran quit

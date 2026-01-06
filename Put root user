@@ -1,0 +1,62 @@
+Ajouter un utilisateur :
+
+    sudo adduser USER_NAME (facultatif:GROUP_NAME e.g.:sudo)
+
+    Note : par défaut le groupe prend le nom de l'utilisateur
+
+
+
+Ajouter les droits sudo à un utilisateur :
+
+    Se connecter en root :
+    
+        su
+    
+    sudo apt update
+    
+    sudo apt install passwd
+    
+    sudo /usr/sbin/usermod -aG sudo USER_NAME
+    
+    Actualiser :
+    
+        newgrp sudo
+    
+    Tester :
+    
+        sudo whoami    (=>root)
+
+    Redemarrer le système
+
+        sudo reboot
+
+
+
+Pour lister les utilisateurs :
+
+    cut -d: -f1 /etc/passwd    (ça affiche d'autres éléments aussi !)
+
+
+Pour lister les groupes :
+
+    cut -d: -f1 /etc/group    (ça affiche d'autres éléments aussi !)
+
+
+Pour lister les groupes d'un utilisateur précis :
+
+    groups USER_NAME
+
+
+Lister les membres d'un groupe précis :
+
+    getent group GROUP_NAME
+
+
+Supprimer un utilisateur (et tout ses fichiers !) :
+
+    sudo deluser --remove-all-files USER_NAME
+
+
+Supprimer un groupe :
+
+    sudo delgroup GROUP_NAME

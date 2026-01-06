@@ -1,0 +1,38 @@
+Ajouter l'utilisateur au groupe docker :
+
+    sudo usermod -aG docker USER_NAME
+
+Télécharger l'image :
+
+    docker pull jellyfin/jellyfin
+
+Créer un dossier jellyfin :
+
+    eg : sudo mkdir /srv/jellyfin/
+
+Donner les droit à l'utilisateur :
+
+    sudo chown -R USER_NAME:USER_NAME CHEMIN_JELLYFIN
+
+Créer un dossier config :
+
+    e.g. : sudo mkdir /srv/jellyfin/config
+
+Créer un dossier pour le cache :
+
+    e.g. : sudo mkdir /srv/jellyfin/cache
+
+Executer cette commande :
+
+    docker run -d \
+     --name jellyfin \
+     --user 1000:1000 \
+     -p 8096:8096/tcp \
+     -p 7359:7359/udp \
+     --volume CHEMIN_CONFIG:/config \
+     --volume CHEMIN_CACHE:/cache \
+     --mount type=bind,source=CHEMIN_MEDIA,target=/media \
+     --restart=unless-stopped \
+     jellyfin/jellyfin
+
+A la premiere connection : faire comme si on avait oublié le mdp et inventer un code pin

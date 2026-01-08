@@ -1,0 +1,13 @@
+Si l'interface graphique n'a pas été installée :
+
+    Connection en root :
+
+        su
+
+    Telecharger le paquet :
+
+        apt install task-gnome-desktop -y
+
+    Redemarrer le server :
+
+        sudo reboot

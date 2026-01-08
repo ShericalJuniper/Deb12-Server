@@ -3,3 +3,7 @@ sudo apt install openssh-server -y
 
 Pour se connecter :
     ssh USER_NAME@SERVER_IP
+
+En cas de changement de server, la clé risque de ne plus être correct :
+
+    ssh-keygen -R 192.168.1.100    (Client)

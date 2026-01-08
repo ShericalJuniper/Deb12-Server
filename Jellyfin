@@ -10,10 +10,6 @@ Créer un dossier jellyfin :
 
     eg : sudo mkdir /srv/jellyfin/
 
-Donner les droit à l'utilisateur :
-
-    sudo chown -R USER_NAME:USER_NAME CHEMIN_JELLYFIN
-
 Créer un dossier config :
 
     e.g. : sudo mkdir /srv/jellyfin/config
@@ -21,6 +17,10 @@ Créer un dossier config :
 Créer un dossier pour le cache :
 
     e.g. : sudo mkdir /srv/jellyfin/cache
+
+Donner les droit à l'utilisateur :
+
+    sudo chown -R USER_NAME:USER_NAME CHEMIN_JELLYFIN
 
 Executer cette commande :
 

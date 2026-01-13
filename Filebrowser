@@ -1,0 +1,29 @@
+Créer un dossier filebrowser :
+
+    eg : sudo mkdir /srv/filebrowser/
+
+Changer le proprietaire du dossier :
+
+    sudo chown -R USER_NAME:USER_NAME CHEMIN
+
+Exécuter :
+
+    docker run -d \
+        --name filebrowser \
+        --user $(1000 -u):$(1000 -g) \
+        -p 8080:8080 \
+        -v CHEMIN_VERS_DATA:/data/ \
+        -v CHEMIN_VERSCONFIG:/config \
+        -e FB_BASEURL=/filebrowser \
+        hurlenko/filebrowser
+
+    Note : pour avoir de multiple volumes : target -> /data/X
+                                                                               -> /data/Y
+                                                                               -> /data/Z
+
+À la premiere connection : aller dans les logs pour trouver les identifiants :
+
+     - username : admin
+     - password : RANDOM
+
+Se connecter et changer le mots de passe

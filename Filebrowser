@@ -2,6 +2,10 @@ Créer un dossier filebrowser :
 
     eg : sudo mkdir /srv/filebrowser/
 
+Créer un dossier config :
+
+    eg : sudo mkdir /srv/filebrowser/config/
+
 Changer le proprietaire du dossier :
 
     sudo chown -R USER_NAME:USER_NAME CHEMIN

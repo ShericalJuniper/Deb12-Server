@@ -1,0 +1,39 @@
+Télécharger l'image :
+
+    docker pull lscr.io/linuxserver/qbittorrent:latest
+
+Créer un dossier qbitorrent :
+    eg : sudo mkdir /srv/qbitorrent/
+
+Créer un dossier config :
+
+    eg : sudo mkdir /srv/qbitorrent/config
+
+Changer le proprietaire d'un dossier
+    sudo chown -R USER_NAME:USER_NAME CHEMIN
+
+Executer :
+
+    docker run -d \
+      --name=qbittorrent \
+      -e PUID=1000 \
+      -e PGID=1000 \
+      -e TZ=Europe/Paris \
+      -e WEBUI_PORT=8080 \
+      -e TORRENTING_PORT=6881 \
+      -p 8080:8080 \
+      -p 6881:6881 \
+      -p 6881:6881/udp \
+      -v CHEMIN_VERS_CONFIG:/config \
+      -v CHEMIN_VERS_DOWNLOADS:/downloads  \
+      --restart unless-stopped \
+      lscr.io/linuxserver/qbittorrent:latest
+
+À la premiere connection : aller dans les logs pour trouver les identifiants
+
+     - username : admin
+     - password : RANDOM
+
+Se connecter et changer le mots de passe (Tools->Options->WebUI->Authentification)
+
+Note : pour changer de port : changer dans "Environnements" -> WebUIport et ensuite mapper ce nouveau port

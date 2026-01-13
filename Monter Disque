@@ -1,0 +1,54 @@
+Brancher le disque et repérer son nom (sda, sdb, ...) :
+    
+    lsblk
+
+Partitionner le disque :
+
+    sudo fdisk /dev/sdX    (X la lettre correspondante)
+
+Créer une table GPT :
+
+    g
+
+Entrer dans le programme d'ajout de partition :
+
+    n
+
+Partition number (defaut 1) :
+
+    /enter
+
+First sector (default 2048 si premiere partition) :
+
+    /enter
+
+Last sector (defaut /selon disque) :
+
+    /enter
+
+    NOTE : en reglant 1er et dernier secteurs, on regle la taille de la partition !
+
+Vérifier la partition :
+
+    p
+
+Sauvergarder :
+
+    w
+
+Créer un systeme de fichier :
+
+    sudo mkfs.ext4 /dev/PARTITION (sda1, sdb2, ...)
+
+Monter la partition :
+
+    sudo mkdir -p /mnt/DISK_NAME
+    sudo mount /dev/PARTITION /mnt/DISK_NAME
+
+Créer un dossier pour les fichiers :
+
+    sudo mkdir /mnt/DISK_NAME/data
+
+Donner les droits à l'utilisateur :
+
+    sudo chown -R USER_NAME:USER_NAME /mnt/DISK_NAME/data

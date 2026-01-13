@@ -1,0 +1,50 @@
+1ere MÉTHODE
+
+    sudo nano /etc/systemd/logind.conf
+    
+        HandleSuspendKey=ignore
+        HandleHibernateKey=ignore
+        HandleLidSwitch=ignore
+        HandleLidSwitchDocked=ignore
+        IdleAction=ignore
+    
+    sudo systemctl restart systemd-logind
+
+
+
+2eme MÉTHODE :
+
+    systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+
+
+
+3eme MÉTHODE :
+
+Créer le fichier de service au bon endroit
+
+    sudo nano /etc/systemd/system/nosleep.service
+
+Dans l’éditeur, coller tout ce contenu :
+
+    [Unit]
+    Description=Empêche la mise en veille
+    
+    [Service]
+    Type=simple
+    ExecStart=/bin/bash -c "while true; do sleep 3600; done"
+    
+    [Install]
+    WantedBy=multi-user.target
+
+Recharger systemd pour qu’il détecte le nouveau service :
+
+    sudo systemctl daemon-reload
+
+Activer et démarrer le service :
+
+    sudo systemctl enable --now nosleep.service
+
+Vérifier que ça tourne :
+
+    systemctl status nosleep.service
+

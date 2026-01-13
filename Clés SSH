@@ -1,0 +1,16 @@
+Générer une paire de cLes ssh :
+
+    ssh-keygen    (à faire sur le client !)
+
+Pour copier la cle sur le client :
+
+    ssh-copy-id -i CHEMIN_CLE_PUB USERNAME@IP_SERVER    (client)
+
+Les clés se trouvent en C:\Users\USER_NAME\.ssh
+
+Clé privée : la mettre en lieu surs et connaitre son chemin    (client)
+Clé publique : la copier dans /home/USER_NAME/.ssh/authorized_keys    (sur une seule ligne !)    (serveur)
+
+Pour se connecter :
+
+    ssh -i  CHEMIN_CLE USERNAME@IP_SERVER    (client)

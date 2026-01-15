@@ -37,3 +37,9 @@ Executer :
 Se connecter et changer le mots de passe (Tools->Options->WebUI->Authentification)
 
 Note : pour changer de port : changer dans "Environnements" -> WebUIport et ensuite mapper ce nouveau port
+
+Note : pour permettre à qBitorrent de lire et ecrire dans les dossiers torrents (eg : dossier surveillé)
+
+        sudo setfacl -R -m u:1000:rwx CHEMIN_DOSSIER_SURVEILLÉ
+        sudo setfacl -d -m u:1000:rwx CHEMIN_DOSSIER_SURVEILLÉ
+

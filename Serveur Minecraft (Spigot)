@@ -69,3 +69,10 @@ Propritété du monde/serveur -> server.properties
 Icon du serveur -> server-icon.png (resolution 64x64 !!!)
 
 
+Donner les droits :
+
+    sudo chown -R USERNAME:USERNAME /CHEMIN_SERVER
+
+    sudo chmod -R 775 /CHEMIN_SERVER
+
+
